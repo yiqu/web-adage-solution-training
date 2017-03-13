@@ -1,4 +1,4 @@
-# web-adage-solution-training
+# web-age-solution-training
 
 git clone
 

@@ -1,0 +1,7 @@
+<div *ngFor="let interest of interests">
+
+  <input type="checkbox" [id]="interest.name" (change)="check(interest)" [checked]=interest.checked>
+  <label [for]="interest.name">{{interest.name}}</label>
+
+</div>
+You just checked: {{checkedValue}}

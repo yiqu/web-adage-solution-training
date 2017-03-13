@@ -19,6 +19,15 @@ export class Lab2Component {
   private id: number = 1;
   private duration: number = 99;
 
+  cancelBooking<T extends Cancellable & Product> (c: T) {
+    console.log('Cancel cost: ' + c.cancelFee);
+    console.log('Price was: ' + c.getTitle());
+  }
+
+  printPerson(name: string, age: number): void {
+    console.log(`Name: ${name}, age: ${age}`);
+  }
+
   constructor () {
     // print to console
     this.printPerson(this.name, this.age);
@@ -36,12 +45,17 @@ export class Lab2Component {
     newDining.setTitle("India Trip");
     newDining.setPrice(11);
     newDining.printDetails();
+
+    let newTourImpl = new TourImp(this.id, 12);
+    newTourImpl.setPrice(99999);
+    newTourImpl.setTitle("Trip to Taj Mahal");
+    newTourImpl.setAvailDate([new Date]);
+    newTourImpl.setCancelFee(89);
+    newTourImpl.printDetails();
   }
 
-  printPerson (name: string, age: number): void {
-    console.log(`Name: ${name}, age: ${age}`);
-    console.log(" ${name} ");
-  }
+
+
 }
 
 // Class and inheritance
@@ -55,16 +69,18 @@ class Product {
     this.id = id;
   }
 
-  setTitle(title: string){
+  setTitle(title: string): void {
     this.title = title;
   }
-  setPrice(price: number) {
+  setPrice(price: number): void {
     this.price = price;
   }
-  setId(id: number) {
+  setId(id: number): void {
     this.id = id;
   }
-
+  getTitle(): string {
+    return this.title;
+  }
   printDetails() {
     console.log('Printing product: ==============');
     console.log(`Title: ${this.title}`);
@@ -86,7 +102,6 @@ class Tour extends Product {
     super.printDetails();
     console.log(`Duration: ${this.duration}`);
   }
-
 }
 
 class Dining extends Product {
@@ -107,3 +122,43 @@ class Dining extends Product {
 }
 
 // Interfaces
+
+interface Bookable {
+  availableDates: [Date];
+  setAvailDate(dates: Array<Date>);
+}
+
+interface Cancellable {
+  cancelFee: number;
+  setCancelFee(fee: number);
+}
+
+class TourImp extends Product implements Bookable, Cancellable{
+  private duration: number;
+
+  // Need this 2 properties and 2 methids impl from the 2 Interfaces
+  availableDates: [Date];
+  cancelFee: number;
+  setAvailDate(dates: [Date]) {
+    this.availableDates = dates;
+  }
+  setCancelFee(fee: number) {
+    this.cancelFee = fee;
+  }
+
+  constructor(id: number, duration: number) {
+    super(id);
+    this.duration = duration;
+  }
+  
+  printDetails() {
+    console.log('Printing Tour: ==============');
+    super.printDetails();
+    console.log(`Duration: ${this.duration}`);
+    console.log(`Avail: ${this.availableDates}`);
+    console.log(`Cancel Fee: ${this.cancelFee}`);
+  }
+}
+
+// Generics
+

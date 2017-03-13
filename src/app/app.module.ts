@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 import { Lab1Component } from './Lab1/lab1.component';
 import { Lab2Component } from './Lab2/lab2.component'
+import { Lab3Component } from './Lab3/lab3.component';
 import { HomeComponent } from './home/home.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -16,6 +17,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     AppComponent,
     Lab1Component,
     Lab2Component,
+    Lab3Component,
     HomeComponent,
   ],
   imports: [
@@ -23,7 +25,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig, { useHash: false })
   ],
   providers: [
     //service

@@ -9,6 +9,12 @@ import { HttpModule } from '@angular/http';
 import { Lab1Component } from './Lab1/lab1.component';
 import { Lab2Component } from './Lab2/lab2.component'
 import { Lab3Component } from './Lab3/lab3.component';
+import { Lab5Component } from './Lab5/data-binding.component';
+import { Lab6Component } from './Lab6/lab6.component';
+import { Lab7Component } from './Lab7/lab7.component';
+import { Lab8Component } from './Lab8/lab8.component';
+
+
 import { FancyTextComponent } from './Lab3/fancy-text.component'
 import { NotFancyCheckBoxComponent } from './Lab3/not-fancy-checkbox.component';
 
@@ -21,6 +27,10 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     Lab1Component,
     Lab2Component,
     Lab3Component,
+    Lab5Component,
+    Lab6Component,
+    Lab7Component,
+    Lab8Component,
     FancyTextComponent,
     NotFancyCheckBoxComponent,
     HomeComponent,

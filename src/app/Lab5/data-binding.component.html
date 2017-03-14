@@ -1,0 +1,12 @@
+<h1> Lab 5 - Data binding </h1>
+
+<form (ngSubmit)="onSubmit()" #editorForm="ngForm">
+
+  <textarea [(ngModel)]="userInput" rows="5" cols="40" name="userTextInput" (keyup)="onKey($event)"> </textarea>
+  <h4> Preview in html </h4>
+  <div [innerHTML]="userInput"></div>
+
+  <h4> Raw text </h4>
+  <pre>{{userInput}}</pre>
+  
+</form>

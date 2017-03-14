@@ -1,1 +1,13 @@
-<h1> Lab 7 - </h1>
+<h1> Lab 7 - using ngIf and ngFor</h1>
+
+<h3>Currently the show is set to {{show}} </h3>
+
+<label class="switch">
+  <input type="checkbox" [(ngModel)]="show" (change)="onToggle()">
+  <div class="slider round"></div>
+</label>
+
+<div *ngIf="show" > I AM A MESSAGE!!! And here are
+  <div *ngFor="let thing of things"> {{thing}} </div>
+
+</div>

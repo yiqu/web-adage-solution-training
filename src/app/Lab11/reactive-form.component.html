@@ -1,0 +1,19 @@
+<h1> Lab 11 - Reactive forms </h1>
+
+
+
+<h2>Hero Detail</h2>
+<h3><i>FormControl in a FormGroup</i></h3>
+<form [formGroup]="heroForm2" novalidate (ngSubmit)="submitForm(heroForm2.value)">
+  
+  <div *ngFor="let name of names">
+    <label>{{name}}:
+      <input [formControlName]="name">
+    </label>
+    
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<p>Form value: {{ heroForm2.value | json }}</p>
+<p>Form status: {{ heroForm2.status | json }}</p>

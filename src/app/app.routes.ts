@@ -7,6 +7,7 @@ import { Lab5Component } from './Lab5/data-binding.component';
 import { Lab6Component } from './Lab6/lab6.component';
 import { Lab7Component } from './Lab7/lab7.component';
 import { Lab8Component } from './Lab8/lab8.component';
+import { ReactiveForm } from './Lab11/reactive-form.component';
 import { HomeComponent } from './home/home.component';
 
 export const rootRouterConfig: Routes = [
@@ -20,6 +21,7 @@ export const rootRouterConfig: Routes = [
   { path: '6', component: Lab6Component },
   { path: '7', component: Lab7Component },
   { path: '8', component: Lab8Component },
+  { path: '11', component: ReactiveForm},
 
 ];
 

@@ -1,1 +1,16 @@
-<h1> Lab 8 </h1>
+<h1> Lab 8 - forms</h1>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(inputField.value)">
+  <input type="text" required [(ngModel)]="textentered" name="textentered" #inputField>
+  <input type="checkbox" />
+  <input type="radio" name="time" [(ngModel)]="time" value="daySelected"  />Day
+  <input type="radio" name="time" [(ngModel)]="time" value="nightSelected" />Night
+  <button type="submit" [disabled]="!myForm.form.valid">SUBMIT</button>
+
+</form>
+
+Class state: {{inputField.className}} and {{inputField.value}}
+<br />
+Form valid: {{myForm.form.valid}}
+<br />
+{{result}} and text: {{textentered}} and time: {{time}}

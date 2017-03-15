@@ -14,6 +14,7 @@ import { Lab6Component } from './Lab6/lab6.component';
 import { Lab6ChildComponent } from './Lab6/lab6.component';
 import { Lab7Component } from './Lab7/lab7.component';
 import { Lab8Component } from './Lab8/lab8.component';
+import { Lab12Component } from './Lab12/lab12.component';
 import { ReactiveForm } from './Lab11/reactive-form.component';
 
 import { service } from './shared/service';
@@ -34,6 +35,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     Lab6ChildComponent,
     Lab7Component,
     Lab8Component,
+    Lab12Component,
     ReactiveForm,
     FancyTextComponent,
     NotFancyCheckBoxComponent,

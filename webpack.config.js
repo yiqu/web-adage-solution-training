@@ -9,7 +9,7 @@ var webpackConfig = {
   },
 
   output: {
-    publicPath: '/web-adage-solution-training/',
+    publicPath: '/',
     path: path.resolve(__dirname, './dist'),
   },
 
